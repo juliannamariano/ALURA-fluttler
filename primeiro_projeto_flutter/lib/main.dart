@@ -16,12 +16,34 @@ home: é a tela inicial do app — nesse caso, um Stack.*/
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
       ),
-      home: Scaffold( //widget do material design. Ele pede alguns parâmetros: TOPO, MEIO, FUNDO
-        appBar: AppBar(
-          title: Text('Flutter meus primeiros passos'),
+      home: Scaffold(
+        //widget do material design. Ele pede alguns parâmetros: TOPO, MEIO, FUNDO
+        appBar: AppBar(title: Text('Tarefas')),
+        body: Container(
+          child: Stack(
+            children: [
+              Container(color: Colors.blue, height: 140),
+              Container(
+                color: Colors.white,
+                height: 100,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(color: Colors.black26, width: 72, height: 100),
+                    Text('Aprender flutter'),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Icon(Icons.arrow_drop_up),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
+        floatingActionButton: FloatingActionButton(onPressed: () {}),
       ),
     );
   }
